@@ -17,13 +17,11 @@ const Header = () => {
           <div className="row">
             <div className="col-6 header_top_left">
               <ul>
-                  <li>
-                  <AiOutlineMail/>
-                    hello@gmail.com
-                  </li>
-                  <li>
-                    miễn phí ship đơn từ {fomater(200000)}
-                  </li>
+                <li>
+                  <AiOutlineMail />
+                  hello@gmail.com
+                </li>
+                <li>miễn phí ship đơn từ {fomater(200000)}</li>
               </ul>
             </div>
             <div className="col-6 header_top_right">
@@ -58,6 +56,13 @@ const Header = () => {
               <div></div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-3">LOGO</div>
+          <div className="col-xl-6">MENU</div>
+          <div className="col-xl-3">PHONE</div>
         </div>
       </div>
     </>
