@@ -1,9 +1,11 @@
 import { memo } from "react";
+import "../header/style.scss";
 
 const Header = () => {
   return (
     <>
-      <h1>Header</h1>
+      <div className="top_header">Haaa</div>
+      <h1 className="container">Header</h1>
     </>
   );
 };
