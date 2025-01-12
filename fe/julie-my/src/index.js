@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import RouterCustom from './pages/router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <h1>hahaaa</h1>
+  <BrowserRouter>
+      <RouterCustom></RouterCustom>
+  </BrowserRouter>
 );
 
