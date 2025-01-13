@@ -2,7 +2,8 @@ import { memo, useState } from "react";
 import "../header/style.scss";
 import { AiOutlineFacebook } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
-import { AiOutlineTwitter } from "react-icons/ai";
+// import { AiOutlineTwitter } from "react-icons/ai";
+import { LiaTwitterSquare } from "react-icons/lia";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { ROUTERS } from "../../../../utils/router";
@@ -83,8 +84,10 @@ const Header = () => {
                 </li>
                 <li>
                   <Link to={""}>
-                    <AiOutlineTwitter />
+                    <LiaTwitterSquare />
                   </Link>
+                </li>
+                <li>
                   <span>
                     <Link to={""}>
                       <AiOutlineUser />
@@ -109,8 +112,17 @@ const Header = () => {
             <nav className="header_menu">
               <ul>
                 {menus?.map((menu, menuKey) => (
-                  <li key={menuKey} className={menuKey === 0 ? 'active' : '' }>
+                  <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
                     <Link to={menu?.path}>{menu?.name}</Link>
+                    {menu.child && (
+                      <ul className="header_menu_dropdown">
+                        {menu.child.map((childItem, childKey) => (
+                          <li key={`${menuKey}-${childKey}`}>
+                            <Link to={childItem.path}>{childItem.name}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>

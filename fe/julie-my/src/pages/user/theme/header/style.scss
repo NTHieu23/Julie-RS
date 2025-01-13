@@ -121,22 +121,57 @@
 
         li{
             list-style: none;
+            position: relative;
+
+            a{
+                text-decoration: none;
+                font-size: 14px;
+                color: map-get($theme-color, "bold-text");
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+                transition: all 0.3s;
+                padding: 5px 0;
+                display: block;
+            }
         }
 
-        a{
-            text-decoration: none;
-            font-size: 14px;
-            color: map-get($theme-color, "bold-text");
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            padding: 5px 0;
+        li:hover .header_menu_dropdown{
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .active a {
+            color: map-get($theme-color, "main");
+        } 
+
+        
+        .header_menu_dropdown{
+            background-color: #222222;
             display: block;
+            position: absolute;
+            width: 180px;
+            z-index: 9;
+            padding: 5px 0;
+            transition: all, 0.3s;
+            opacity: 0;
+            visibility: hidden;
+
+            li {
+                a {
+                    text-transform: capitalize;
+                    color: #fff;
+                    font-weight: 400;
+                    padding: 5px 15px;
+                    font-size: 13px;
+                }
+
+                :hover{
+                    color: map-get($theme-color, "main");
+                }
+            }
         }
     }
 
-    .active a {
-        color: map-get($theme-color, "main");
-    }
+    
 }
