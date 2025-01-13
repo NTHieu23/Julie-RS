@@ -6,13 +6,14 @@ import {
   AiOutlineLinkedin,
   AiOutlineUser,
   AiOutlineMail,
+  AiOutlineShoppingCart,
+  AiOutlinePhone,
 } from "react-icons/ai";
 import { MdOutlineMenu } from "react-icons/md";
 import { LiaTwitterSquare } from "react-icons/lia";
 import { Link } from "react-router-dom";
 import { ROUTERS } from "../../../../utils/router";
 import { fomater } from "../../../../utils/fomater";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Header = () => {
   const [isShowCategories, setShowCategories] = useState(true);
@@ -157,25 +158,58 @@ const Header = () => {
               <MdOutlineMenu />
               Danh Sách Sản Phẩm
             </div>
-              <ul className={isShowCategories ? '' : 'hidden'}>
-                <li>
-                  <Link to={"#"}>Thịt tươi</Link>
-                </li>
-                <li>
-                  <Link to={"#"}>Rau củ</Link>
-                </li>
-                <li>
-                  <Link to={"#"}>Nước trái cây</Link>
-                </li>
-                <li>
-                  <Link to={"#"}>Trái cây</Link>
-                </li>
-                <li>
-                  <Link to={"#"}>Hải Sản</Link>
-                </li>
-              </ul>
+            <ul className={isShowCategories ? "" : "hidden"}>
+              <li>
+                <Link to={"#"}>Thịt tươi</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Rau củ</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Nước trái cây</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Trái cây</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Hải Sản</Link>
+              </li>
+            </ul>
           </div>
-          <div className="col-lg-9">Phai</div>
+          <div className="col-lg-9 hero_shearch_container">
+            <div className="hero_shearch">
+              <div className="hero_shearch_form">
+                <form>
+                  <input type="text" placeholder="Bạn đang tìm gì?" />
+                  <button type="submit" className="">
+                    Tìm kiếm
+                  </button>
+                </form>
+              </div>
+              <div className="hero_shearch_phone">
+                <div className="hero_shearch_phone_icon">
+                  <AiOutlinePhone />
+                </div>
+                <div className="hero_shearch_phone_text">
+                  <p>0987.123.789</p>
+                  <span>Hỗ trợ 24/7</span>
+                </div>
+              </div>
+            </div>
+            <div className="hero_item">
+              <div className="hero_text">
+                <span>Trái cây tươi</span>
+                <h2>
+                  Rau quả <br />
+                  sạch 100%
+                </h2>
+                <p>Miễn phí giao hàng tận nơi</p>
+                <Link to={""} className="primary-btn">
+                  Mua ngay
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
