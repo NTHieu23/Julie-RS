@@ -4,16 +4,18 @@ import {
   AiOutlineFacebook,
   AiOutlineInstagram,
   AiOutlineLinkedin,
+  AiOutlineUser,
+  AiOutlineMail,
 } from "react-icons/ai";
+import { MdOutlineMenu } from "react-icons/md";
 import { LiaTwitterSquare } from "react-icons/lia";
 import { Link } from "react-router-dom";
 import { ROUTERS } from "../../../../utils/router";
-import { AiOutlineUser } from "react-icons/ai";
-import { AiOutlineMail } from "react-icons/ai";
 import { fomater } from "../../../../utils/fomater";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Header = () => {
+  const [isShowCategories, setShowCategories] = useState(true);
   const [menus, setMenus] = useState([
     {
       name: "Trang Chủ",
@@ -143,6 +145,37 @@ const Header = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row hero_categories_container">
+          <div className="col-lg-3 hero_categories">
+            <div
+              className="hero_categories_all"
+              onClick={() => setShowCategories(!isShowCategories)}
+            >
+              <MdOutlineMenu />
+              Danh Sách Sản Phẩm
+            </div>
+              <ul className={isShowCategories ? '' : 'hidden'}>
+                <li>
+                  <Link to={"#"}>Thịt tươi</Link>
+                </li>
+                <li>
+                  <Link to={"#"}>Rau củ</Link>
+                </li>
+                <li>
+                  <Link to={"#"}>Nước trái cây</Link>
+                </li>
+                <li>
+                  <Link to={"#"}>Trái cây</Link>
+                </li>
+                <li>
+                  <Link to={"#"}>Hải Sản</Link>
+                </li>
+              </ul>
+          </div>
+          <div className="col-lg-9">Phai</div>
         </div>
       </div>
     </>
