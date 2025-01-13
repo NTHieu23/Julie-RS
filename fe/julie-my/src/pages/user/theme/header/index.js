@@ -1,10 +1,11 @@
 import { memo, useState } from "react";
 import "../header/style.scss";
-import { AiOutlineFacebook } from "react-icons/ai";
-import { AiOutlineInstagram } from "react-icons/ai";
-// import { AiOutlineTwitter } from "react-icons/ai";
+import {
+  AiOutlineFacebook,
+  AiOutlineInstagram,
+  AiOutlineLinkedin,
+} from "react-icons/ai";
 import { LiaTwitterSquare } from "react-icons/lia";
-import { AiOutlineLinkedin } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { ROUTERS } from "../../../../utils/router";
 import { AiOutlineUser } from "react-icons/ai";
