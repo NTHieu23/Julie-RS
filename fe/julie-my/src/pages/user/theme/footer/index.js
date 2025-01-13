@@ -1,10 +1,13 @@
 import { memo } from "react";
 import "./style.scss";
 import { Link } from "react-router-dom";
-import { AiOutlineFacebook } from "react-icons/ai";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { AiOutlineTwitter } from "react-icons/ai";
-import { AiOutlineLinkedin } from "react-icons/ai";
+import {
+  AiOutlineFacebook,
+  AiOutlineInstagram,
+  AiOutlineLinkedin,
+} from "react-icons/ai";
+import { LiaTwitterSquare } from "react-icons/lia";
+
 
 const Footer = () => {
   return (
@@ -12,7 +15,7 @@ const Footer = () => {
       <footer className="footer">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
               <div className="footer_about">
                 <h1 className="footer_about_logo">Julie</h1>
                 <ul>
@@ -22,7 +25,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <div className="footer_widget">
                 <h6>Cửa Hàng</h6>
                 <ul>
@@ -49,12 +52,12 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-12 col-sm-12 col-xs-12">
               <div className="footer_widget">
                 <h6>Khuyến mãi & ưu đãi</h6>
                 <p>Đăng ký nhận thông tin tại đây</p>
                 <form action={"#"}>
-                  <div>
+                  <div className="input-group">
                     <input type="text" placeholder="Nhập email" />
                     <button type="submit" className="button-submit">
                       Đăng ký
@@ -71,7 +74,7 @@ const Footer = () => {
                       <AiOutlineLinkedin />
                     </div>
                     <div>
-                      <AiOutlineTwitter/>
+                      <LiaTwitterSquare />
                     </div>
                   </div>
                 </form>
