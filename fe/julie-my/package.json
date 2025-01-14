@@ -10,6 +10,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "react-tabs": "^6.1.0",
     "sass": "^1.83.1"
   },
   "scripts": {
