@@ -160,19 +160,19 @@ const Header = () => {
             </div>
             <ul className={isShowCategories ? "" : "hidden"}>
               <li>
-                <Link to={"#"}>Thịt tươi</Link>
+                <Link to={"#"}>Thịt</Link>
               </li>
               <li>
                 <Link to={"#"}>Rau củ</Link>
               </li>
               <li>
-                <Link to={"#"}>Nước trái cây</Link>
+                <Link to={"#"}>Đồ uống</Link>
               </li>
               <li>
-                <Link to={"#"}>Trái cây</Link>
+                <Link to={"#"}>Hoa quả</Link>
               </li>
               <li>
-                <Link to={"#"}>Hải Sản</Link>
+                <Link to={"#"}>Thức ăn nhanh</Link>
               </li>
             </ul>
           </div>
