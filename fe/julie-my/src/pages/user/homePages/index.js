@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 import { fomater } from "./../../../utils/fomater";
 
 /*{ Banner Begin }*/
-import banner from "../../../assets/users/image/banner/banner-trai-cay.jpg";
-import sua_trai_cay from "../../../assets/users/image/banner/sua-trai-cay.jpg";
+import banner from "../../../assets/users/image/banner/banner_trai_cay.png";
+import sua_trai_cay from "../../../assets/users/image/banner/banner_sua_trai_cay.png";
 /*{ Banner End }*/
 
 /*{ Meat image Begin }*/
@@ -126,60 +126,85 @@ const HomePage = () => {
     all: {
       title: "Toàn bộ",
       products: [
+        /*{product 1 begin}*/
         { name: "Thịt gà", price: 120000, image: Thit_Ga },
-        { name: "Thịt bò", price: 250000, image: Thit_Bo },
-        { name: "Thịt lợn", price: 100000, image: Thit_Lon },
-        { name: "Thịt vịt", price: 150000, image: Thit_Vit },
-        { name: "Thịt cừu", price: 300000, image: Thit_Cuu },
-        { name: "Thịt nai", price: 350000, image: Thit_Nai },
-        { name: "Sườn heo", price: 220000, image: Suon_Heo },
-        { name: "Thịt gà rút xương", price: 130000, image: Thit_Ga_Rut_Xuong },
-        { name: "Thịt xông khói", price: 180000, image: Thit_Xong_Khoi },
-        { name: "Thịt chân giò", price: 160000, image: Thit_Chan_Gio },
-
         { name: "Cà rốt", price: 30000, image: Ca_Rot },
-        { name: "Khoai tây", price: 25000, image: Khoai_Tay },
-        { name: "Bí đỏ", price: 20000, image: Bi_Do },
-        { name: "Cải thảo", price: 40000, image: Cai_Thao },
-        { name: "Cải xoăn", price: 45000, image: Cai_Xoan },
-        { name: "Rau muống", price: 15000, image: Rau_Muong },
-        { name: "Xà lách", price: 35000, image: Xa_Lach },
-        { name: "Súp lơ", price: 20000, image: Sup_Lo },
-        { name: "Cà chua", price: 25000, image: Ca_Chua },
-        { name: "Ớt chuông", price: 50000, image: Ot_Chuong },
-
         { name: "Nước ngọt có gas", price: 15000, image: Nuoc_Ngot_Co_Gas },
-        { name: "Nước cam ép", price: 35000, image: Nuoc_Cam },
-        { name: "Cà phê", price: 45000, image: Caffee },
-        { name: "Trà sữa", price: 50000, image: Tra_Sua },
-        { name: "Trà xanh", price: 20000, image: Tra_Xanh },
-        { name: "Nước khoáng", price: 10000, image: Nuoc_khoang },
-        { name: "Nước ép dứa", price: 30000, image: Nuoc_Ep_Dua },
-        { name: "Soda chanh", price: 40000, image: Soda_Chanh },
-        { name: "Sinh tố dâu", price: 45000, image: Sinh_To_Dau },
-        { name: "Bia lon", price: 20000, image: Bia },
-
         { name: "Táo đỏ", price: 50000, image: Tao_Do },
-        { name: "Cam vàng", price: 60000, image: Cam_Vang },
-        { name: "Chuối chín", price: 40000, image: Chuoi_Chin },
-        { name: "Dưa hấu", price: 70000, image: Dua_Hau },
-        { name: "Dâu tây", price: 90000, image: Dau_Tay },
-        { name: "Nho đen", price: 85000, image: Nho_Den },
-        { name: "Xoài chín", price: 60000, image: Xoai_Chin },
-        { name: "Ổi xanh", price: 45000, image: Oi_Xanh },
-        { name: "Bơ sáp", price: 75000, image: Bo },
-        { name: "Quýt ngọt", price: 65000, image: Quyt_Ngot },
-
         { name: "Pizza hải sản", price: 150000, image: Pizza_Hai_San },
+        /*{product 1 end}*/
+
+        /*{product 2 begin}*/
+        { name: "Thịt bò", price: 250000, image: Thit_Bo },
+        { name: "Khoai tây", price: 25000, image: Khoai_Tay },
+        { name: "Nước cam ép", price: 35000, image: Nuoc_Cam },
+        { name: "Chuối chín", price: 40000, image: Chuoi_Chin },
         { name: "Gà rán", price: 90000, image: Ga_Ran },
+        /*{product 2 end}*/
+
+        /*{product 3 begin}*/
+        { name: "Thịt lợn", price: 100000, image: Thit_Lon },
+        { name: "Bí đỏ", price: 20000, image: Bi_Do },
+        { name: "Bia lon", price: 20000, image: Bia },
+        { name: "Cam vàng", price: 60000, image: Cam_Vang },
         { name: "Hamburger bò", price: 75000, image: Hamburger },
+        /*{product 3 end}*/
+
+        /*{product 4 begin}*/
+        { name: "Thịt vịt", price: 150000, image: Thit_Vit },
+        { name: "Cải thảo", price: 40000, image: Cai_Thao },
+        { name: "Cà phê", price: 45000, image: Caffee },
+        { name: "Dưa hấu", price: 70000, image: Dua_Hau },
         { name: "Khoai tây chiên", price: 40000, image: Khoai_Tay_Chien },
+        /*{product 4 end}*/
+
+        /*{product 5 begin}*/
+        { name: "Thịt cừu", price: 300000, image: Thit_Cuu },
+        { name: "Cải xoăn", price: 45000, image: Cai_Xoan },
+        { name: "Trà sữa", price: 50000, image: Tra_Sua },
+        { name: "Dâu tây", price: 90000, image: Dau_Tay },
         { name: "Xúc xích nướng", price: 60000, image: Xuc_Xich_Nuong },
+        /*{product 5 end}*/
+
+        /*{product 6 begin}*/
+        { name: "Thịt nai", price: 350000, image: Thit_Nai },
+        { name: "Rau muống", price: 15000, image: Rau_Muong },
+        { name: "Trà xanh", price: 20000, image: Tra_Xanh },
+        { name: "Nho đen", price: 85000, image: Nho_Den },
         { name: "Bánh mì kẹp thịt", price: 70000, image: Banh_Mi_Kep_Thit },
+        /*{product 6 end}*/
+
+        /*{product 7 begin}*/
+        { name: "Sườn heo", price: 220000, image: Suon_Heo },
+        { name: "Xà lách", price: 35000, image: Xa_Lach },
+        { name: "Nước khoáng", price: 10000, image: Nuoc_khoang },
+        { name: "Xoài chín", price: 60000, image: Xoai_Chin },
         { name: "Bánh ngọt", price: 50000, image: Banh_Ngot },
+        /*{product 7 end}*/
+
+        /*{product 8 begin}*/
+        { name: "Thịt gà rút xương", price: 130000, image: Thit_Ga_Rut_Xuong },
+        { name: "Cà chua", price: 25000, image: Ca_Chua },
+        { name: "Nước ép dứa", price: 30000, image: Nuoc_Ep_Dua },
+        { name: "Ổi xanh", price: 45000, image: Oi_Xanh },
         { name: "Bánh bao chiên", price: 45000, image: Banh_Bao_Chien },
+        /*{product 8 end}*/
+
+        /*{product 9 begin}*/
+        { name: "Thịt xông khói", price: 180000, image: Thit_Xong_Khoi },
+        { name: "Ớt chuông", price: 50000, image: Ot_Chuong },
+        { name: "Soda chanh", price: 40000, image: Soda_Chanh },
+        { name: "Bơ sáp", price: 75000, image: Bo },
         { name: "Hotdog", price: 60000, image: HotDog },
+        /*{product 9 end}*/
+
+        /*{product 10 begin}*/
+        { name: "Thịt chân giò", price: 160000, image: Thit_Chan_Gio },
+        { name: "Súp lơ", price: 20000, image: Sup_Lo },
+        { name: "Sinh tố dâu", price: 45000, image: Sinh_To_Dau },
+        { name: "Quýt ngọt", price: 65000, image: Quyt_Ngot },
         { name: "Mỳ xào bò", price: 80000, image: Mi_Xao_Bo },
+        /*{product 10 end}*/
       ],
     },
     freshMeat: {
@@ -269,7 +294,8 @@ const HomePage = () => {
       const tabPanel = [];
       data[key].products.forEach((item, index_2) => {
         tabPanel.push(
-          <div className="col-lg-3" key={index_2}>
+          // <div className="col-lg-3" key={index_2}>
+          <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12" key={index_2}>
             <div className="featured_item">
               <div
                 className="featured_item-pic"
@@ -349,31 +375,9 @@ const HomePage = () => {
         <div className="banner">
           <div className="banner_pic">
             <img src={banner} alt="banner" />
-            <span>Trái Cây Tươi</span>
-            <h5>
-              100% tự nhiên <br />
-              Không chất bảo quản
-            </h5>
-            <div>
-              <Link to={""}>
-                <AiOutlineShoppingCart />
-                Mua Ngay
-              </Link>
-            </div>
           </div>
           <div className="banner_pic">
             <img src={sua_trai_cay} alt="banner" />
-            <span>Sữa Trái Cây</span>
-            <h5>
-              Hàng nhập khẩu <br />
-              Chứng nhận an toàn thực phẩm
-            </h5>
-            <div>
-              <Link to={""}>
-                <AiOutlineShoppingCart />
-                Mua Ngay
-              </Link>
-            </div>
           </div>
         </div>
       </div>

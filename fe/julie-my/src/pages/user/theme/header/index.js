@@ -20,7 +20,7 @@ import { fomater } from "../../../../utils/fomater";
 
 const Header = () => {
   const [isShowCategories, setShowCategories] = useState(true);
-  const [isShowHumberger, setShowHumberger] = useState(true);
+  const [isShowHumberger, setShowHumberger] = useState(false);
   const [menus, setMenus] = useState([
     {
       name: "Trang Chủ",
@@ -157,7 +157,7 @@ const Header = () => {
         <div className="humberger_menu_contact">
           <ul>
             <li>
-              <MdEmail/> Julie@gmail.com
+              <MdEmail /> Julie@gmail.com
             </li>
             <li>Miễn phí đơn từ {fomater(200000)}</li>
           </ul>
@@ -260,7 +260,7 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="row hero_categories_container">
-          <div className="col-lg-3 hero_categories">
+          <div className="col-lg-3 col-md-12 col-sm-12 col-xs-12 hero_categories">
             <div
               className="hero_categories_all"
               onClick={() => setShowCategories(!isShowCategories)}
@@ -286,7 +286,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-9 hero_shearch_container">
+          <div className="col-lg-9 col-md-12 col-sm-12 col-xs-12 hero_shearch_container">
             <div className="hero_shearch">
               <div className="hero_shearch_form">
                 <form>
