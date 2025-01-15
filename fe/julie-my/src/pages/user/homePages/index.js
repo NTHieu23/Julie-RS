@@ -10,7 +10,7 @@ import { fomater } from "./../../../utils/fomater";
 
 /*{ Banner Begin }*/
 import banner from "../../../assets/users/image/banner/banner-trai-cay.jpg";
-import banner_sua_trai_cay from "../../../assets/users/image/banner/sua-trai-cay.jpg";
+import sua_trai_cay from "../../../assets/users/image/banner/sua-trai-cay.jpg";
 /*{ Banner End }*/
 
 /*{ Meat image Begin }*/
@@ -101,19 +101,19 @@ const HomePage = () => {
 
   const sliderItem = [
     {
-      imageBG: Thit_Bo,
+      imageBG: Thit_Ga,
       name: "Thịt",
     },
     {
-      imageBG: Ot_Chuong,
+      imageBG: Khoai_Tay,
       name: "Rau Củ",
     },
     {
-      imageBG: Nuoc_Ngot_Co_Gas,
+      imageBG: Nuoc_Cam,
       name: "Đồ Uống",
     },
     {
-      imageBG: Tao_Do,
+      imageBG: Dau_Tay,
       name: "Hoa Quả",
     },
     {
@@ -362,7 +362,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="banner_pic">
-            <img src={banner} alt="banner" />
+            <img src={sua_trai_cay} alt="banner" />
             <span>Sữa Trái Cây</span>
             <h5>
               Hàng nhập khẩu <br />

@@ -23,7 +23,7 @@
         bottom: 10%;
         text-align: center;
         font-size: 18px;
-        color: map-get($theme-color, "orange");
+        color: map-get($theme-color, "white");
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -33,6 +33,7 @@
 
         &:hover {
           background: rgb(237, 237, 237);
+          color: map-get($theme-color, "main");
         }
       }
     }
@@ -87,7 +88,7 @@
   }
 
   .featured_item {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 
     &:hover {
       .featured_item-pic_hover {
@@ -172,9 +173,10 @@
   background-size: cover;
   height: 250px;
   align-items: center;
-  width: 100%;
+  width: 102%;
   
 
+  
   .banner_pic {
     position: relative;
     padding-left: 7px;
@@ -183,6 +185,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 20px;
     }
 
     span,
