@@ -8,8 +8,11 @@ import {
   AiOutlineMail,
   AiOutlineShoppingCart,
   AiOutlinePhone,
+  AiOutlineMenu,
+  AiOutlineDownCircle,
+  AiOutlineUpCircle,
 } from "react-icons/ai";
-import { MdOutlineMenu } from "react-icons/md";
+import { MdOutlineMenu, MdEmail } from "react-icons/md";
 import { LiaTwitterSquare } from "react-icons/lia";
 import { Link } from "react-router-dom";
 import { ROUTERS } from "../../../../utils/router";
@@ -17,6 +20,7 @@ import { fomater } from "../../../../utils/fomater";
 
 const Header = () => {
   const [isShowCategories, setShowCategories] = useState(true);
+  const [isShowHumberger, setShowHumberger] = useState(false);
   const [menus, setMenus] = useState([
     {
       name: "Trang Chủ",
@@ -40,6 +44,14 @@ const Header = () => {
           path: "",
         },
         {
+          name: "Đồ Uống",
+          path: "",
+        },
+        {
+          name: "Hoa Quả",
+          path: "",
+        },
+        {
           name: "Thức Ăn Nhanh",
           path: "",
         },
@@ -57,6 +69,101 @@ const Header = () => {
 
   return (
     <>
+      <div
+        className={`humberger_menu_overlay
+      ${isShowHumberger ? "active" : ""}`}
+        onClick={() => setShowHumberger(false)}
+      />
+      <div
+        className={`humberger_menu_wrapper
+      ${isShowHumberger ? "show" : ""}`}
+      >
+        <div className="header_logo">
+          <h1>Julie</h1>
+        </div>
+        <div className="humberger_menu_cart">
+          <ul>
+            <li>
+              <Link to={""}>
+                <AiOutlineShoppingCart /> <span>1</span>
+              </Link>
+            </li>
+          </ul>
+          <div className="header_cart_price">
+            Giỏ hàng: <span>{fomater(1001230)}</span>
+          </div>
+        </div>
+        <div className="humberger_menu_widget">
+          <div className="header_top_right_auth">
+            <Link to={""}>
+              <AiOutlineUser /> Đăng nhập
+            </Link>
+          </div>
+        </div>
+        <div className="humberger_menu_nav">
+          <ul>
+            {menus.map((menu, menuKey) => (
+              <li key={menuKey} to={menu.path}>
+                <Link
+                  to={menu.path}
+                  onClick={() => {
+                    const newMenu = [...menus];
+                    newMenu[menuKey].isShowSubMenu =
+                      !newMenu[menuKey].isShowSubMenu;
+                    setMenus(newMenu);
+                  }}
+                >
+                  {menu.name}
+                  {menu.child &&
+                    (menu.isShowSubMenu ? (
+                      <AiOutlineDownCircle />
+                    ) : (
+                      <AiOutlineUpCircle />
+                    ))}
+                </Link>
+                {menu.child && (
+                  <ul
+                    className={`header_menu_dropdown 
+                  ${menu.isShowSubMenu ? "show_submenu" : ""}`}
+                  >
+                    {menu.child.map((childItem, childKey) => (
+                      <li key={`${menuKey}-${childKey}`}>
+                        <Link to={childItem.path}>{childItem.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="header_top_right_social">
+          <Link to={""}>
+            <AiOutlineFacebook />
+          </Link>
+
+          <Link to={""}>
+            <AiOutlineInstagram />
+          </Link>
+
+          <Link to={""}>
+            <AiOutlineLinkedin />
+          </Link>
+
+          <Link to={""}>
+            <LiaTwitterSquare />
+          </Link>
+        </div>
+        <div className="humberger_menu_contact">
+          <ul>
+            <li>
+              <MdEmail /> Julie@gmail.com
+            </li>
+            <li>Miễn phí đơn từ {fomater(200000)}</li>
+          </ul>
+        </div>
+      </div>
+
       <div className="header_top">
         <div className="container">
           <div className="row">
@@ -107,12 +214,12 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-xl-3">
+          <div className="col-lg-3">
             <div className="header_logo">
               <h1>JULIE</h1>
             </div>
           </div>
-          <div className="col-xl-6">
+          <div className="col-lg-6">
             <nav className="header_menu">
               <ul>
                 {menus?.map((menu, menuKey) => (
@@ -132,7 +239,7 @@ const Header = () => {
               </ul>
             </nav>
           </div>
-          <div className="col-xl-3">
+          <div className="col-lg-3">
             <div className="header_cart">
               <div className="header_cart_price">
                 <span>{fomater(1001230)}</span>
@@ -145,12 +252,15 @@ const Header = () => {
                 </li>
               </ul>
             </div>
+            <div className="humberger_open">
+              <AiOutlineMenu onClick={() => setShowHumberger(true)} />
+            </div>
           </div>
         </div>
       </div>
       <div className="container">
         <div className="row hero_categories_container">
-          <div className="col-lg-3 hero_categories">
+          <div className="col-lg-3 col-md-12 col-sm-12 col-xs-12 hero_categories">
             <div
               className="hero_categories_all"
               onClick={() => setShowCategories(!isShowCategories)}
@@ -176,7 +286,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-9 hero_shearch_container">
+          <div className="col-lg-9 col-md-12 col-sm-12 col-xs-12 hero_shearch_container">
             <div className="hero_shearch">
               <div className="hero_shearch_form">
                 <form>

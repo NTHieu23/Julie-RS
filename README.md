@@ -5,4 +5,5 @@
 # use npm i react-tabs
 # use npm i react-router-dom
 # use npm i eslint-plugin-react
+# use npm i @fontsource/be-vietnam-pro
 

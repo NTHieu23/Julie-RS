@@ -1,5 +1,6 @@
 @use "sass:map";
-@import "../../../../style/pages/theme";
+@use "header";
+@import "../../../../style/pages/all";
 
 $bannerImg: "../../../../assets/users/image/banner/banner.jpg";
 
@@ -314,8 +315,8 @@ $bannerImg: "../../../../assets/users/image/banner/banner.jpg";
     height: 410px;
     display: flex;
     align-items: center;
-    width: 100%;
-    // margin-left: 15px;
+    width: 98%;
+    margin-left: 15px;
 
     .hero_text {
       padding-left: 75px;
@@ -356,6 +357,63 @@ $bannerImg: "../../../../assets/users/image/banner/banner.jpg";
         letter-spacing: 2px;
         text-decoration: none;
       }
+    }
+  }
+}
+
+.humberger_menu_wrapper,
+.humberger_open {
+  display: none;
+}
+
+@include Responsive($MEDIUM_DEVICE) {
+  .hero_shearch_form {
+    width: 530px !important;
+  }
+}
+
+@include Responsive($TABLET_DEVICE) {
+  @include header.header-small-device;
+  .hero_item {
+    width: 100% !important;
+    margin-left: 4px !important;
+  }
+  // .hero_shearch_form {
+  //   width: 360px !important;
+  // }
+}
+
+@include Responsive($WIDE_MOBILE) {
+  @include header.header-small-device;
+
+  .hero_shearch {
+    display: grid;
+  }
+
+  .hero_shearch_form {
+    width: 556px !important;
+  }
+
+  .hero_shearch_phone {
+    margin-bottom: 15px;
+  }
+
+  .hero_item {
+    margin-left: unset !important;
+  }
+
+  // .header_logo{
+  //   width: max-content;
+  // }
+}
+
+@include Responsive($SMALL_DEVICES) {
+  .hero_shearch_form {
+    width: 320px !important;
+    
+    button {
+      width: 150px;
+      height: 50px;
     }
   }
 }
