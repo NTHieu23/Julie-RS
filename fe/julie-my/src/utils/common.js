@@ -246,3 +246,12 @@ export const sliderItem = [
     name: "Đồ Ăn Nhanh",
   },
 ];
+
+export const sorts = [
+    "Giá thấp đến cao",
+    "Giá cao đến thấp",
+    "Hàng mới nhất",
+    "Hàng cũ nhất",
+    "Bán chạy nhất",
+    "Đang giảm giá",
+  ];

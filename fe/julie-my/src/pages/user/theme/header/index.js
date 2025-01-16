@@ -258,7 +258,7 @@ const Header = () => {
               <ul>
                 <li>
                   <Link to={ROUTERS.USER.SHOPPING_CART}>
-                    <AiOutlineShoppingCart /> <span>3</span>
+                    <AiOutlineShoppingCart /> <span>4</span>
                   </Link>
                 </li>
               </ul>
