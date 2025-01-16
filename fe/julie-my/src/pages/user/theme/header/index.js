@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import "../header/style.scss";
 import {
   AiOutlineFacebook,
@@ -14,13 +14,18 @@ import {
 } from "react-icons/ai";
 import { MdOutlineMenu, MdEmail } from "react-icons/md";
 import { LiaTwitterSquare } from "react-icons/lia";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ROUTERS } from "../../../../utils/router";
 import { fomater } from "../../../../utils/fomater";
 
+export const categories = ["Thịt", "Rau củ", "Đồ uống", "Hoa quả", "Thức ăn nhanh"];
+
+
 const Header = () => {
-  const [isShowCategories, setShowCategories] = useState(true);
+  const location = useLocation();
   const [isShowHumberger, setShowHumberger] = useState(false);
+  const [isHome, setIsHome] = useState(location.pathname.length <= 1);
+  const [isShowCategories, setShowCategories] = useState(isHome);
   const [menus, setMenus] = useState([
     {
       name: "Trang Chủ",
@@ -66,6 +71,12 @@ const Header = () => {
       path: "",
     },
   ]);
+
+  useEffect(() => {
+    const isHome = location.pathname.length <= 1;
+    setIsHome(isHome);
+    setShowCategories(isHome);
+  }, [location])
 
   return (
     <>
@@ -269,21 +280,11 @@ const Header = () => {
               Danh Sách Sản Phẩm
             </div>
             <ul className={isShowCategories ? "" : "hidden"}>
-              <li>
-                <Link to={"#"}>Thịt</Link>
-              </li>
-              <li>
-                <Link to={"#"}>Rau củ</Link>
-              </li>
-              <li>
-                <Link to={"#"}>Đồ uống</Link>
-              </li>
-              <li>
-                <Link to={"#"}>Hoa quả</Link>
-              </li>
-              <li>
-                <Link to={"#"}>Thức ăn nhanh</Link>
-              </li>
+              {categories.map((cate, key) => (
+                <li key={key}>
+                  <Link to={ROUTERS.USER.PRODUCTS}>{cate}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="col-lg-9 col-md-12 col-sm-12 col-xs-12 hero_shearch_container">
@@ -306,19 +307,21 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="hero_item">
-              <div className="hero_text">
-                <span>Trái cây tươi</span>
-                <h2>
-                  Rau quả <br />
-                  sạch 100%
-                </h2>
-                <p>Miễn phí giao hàng tận nơi</p>
-                <Link to={""} className="primary-btn">
-                  Mua ngay
-                </Link>
+            {isHome && (
+              <div className="hero_item">
+                <div className="hero_text">
+                  <span>Trái cây tươi</span>
+                  <h2>
+                    Rau quả <br />
+                    sạch 100%
+                  </h2>
+                  <p>Miễn phí giao hàng tận nơi</p>
+                  <Link to={""} className="primary-btn">
+                    Mua ngay
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

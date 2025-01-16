@@ -4,9 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import "../../../pages/user/homePages/style.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { AiOutlineEye, AiOutlineShoppingCart } from "react-icons/ai";
-import { Link } from "react-router-dom";
-import { fomater } from "./../../../utils/fomater";
+
 
 /*{ Banner Begin }*/
 import banner from "../../../assets/users/image/banner/banner_trai_cay.png";
@@ -76,6 +74,7 @@ import Khoai_Tay_Chien from "../../../assets/users/image/categories/Fast-Food/kh
 import Mi_Xao_Bo from "../../../assets/users/image/categories/Fast-Food/mi-xao-bo.jpg";
 import Pizza_Hai_San from "../../../assets/users/image/categories/Fast-Food/pizza-hai-san.jpg";
 import Xuc_Xich_Nuong from "../../../assets/users/image/categories/Fast-Food/xuc-xich-nuong.jpg";
+import ProductCard from "../../../component/productCard";
 
 /*{ Fast Food image End }*/
 
@@ -296,29 +295,7 @@ const HomePage = () => {
         tabPanel.push(
           // <div className="col-lg-3" key={index_2}>
           <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12" key={index_2}>
-            <div className="featured_item">
-              <div
-                className="featured_item-pic"
-                style={{
-                  backgroundImage: `url(${item.image})`,
-                }}
-              >
-                <ul className="featured_item-pic_hover">
-                  <li>
-                    <AiOutlineEye />
-                  </li>
-                  <li>
-                    <AiOutlineShoppingCart />
-                  </li>
-                </ul>
-              </div>
-              <div className="featured_item-text">
-                <h6>
-                  <Link to={""}>{item.name}</Link>
-                </h6>
-                <h5>{fomater(item.price)}</h5>
-              </div>
-            </div>
+            <ProductCard name={item.name} img={item.image} price={item.price} />
           </div>
         );
       });
