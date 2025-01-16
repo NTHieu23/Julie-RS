@@ -3,17 +3,22 @@ import { ROUTERS } from "../utils/router";
 import HomePages from "./user/homePages";
 import ProfilePages from "./user/profilePages";
 import MasterLayout from "./user/theme/masterLayout";
+import ProductsPages from "./user/productsPages";
 
 const renderUserRouter = () => {
   const userRouter = [
     {
       path: ROUTERS.USER.HOME,
-      component: <HomePages></HomePages>,
+      component: <HomePages />,
     },
     {
       path: ROUTERS.USER.PROFILE,
-      component: <ProfilePages></ProfilePages>
-    }
+      component: <ProfilePages />,
+    },
+    {
+      path: ROUTERS.USER.PRODUCTS,
+      component: <ProductsPages/>,
+    },
   ];
   return (
     <MasterLayout>
