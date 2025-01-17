@@ -14,14 +14,20 @@ import {
 } from "react-icons/ai";
 import { MdOutlineMenu, MdEmail } from "react-icons/md";
 import { LiaTwitterSquare } from "react-icons/lia";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ROUTERS } from "../../../../utils/router";
 import { fomater } from "../../../../utils/fomater";
 
-export const categories = ["Thịt", "Rau củ", "Đồ uống", "Hoa quả", "Thức ăn nhanh"];
-
+export const categories = [
+  "Thịt",
+  "Rau củ",
+  "Đồ uống",
+  "Hoa quả",
+  "Thức ăn nhanh",
+];
 
 const Header = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [isShowHumberger, setShowHumberger] = useState(false);
   const [isHome, setIsHome] = useState(location.pathname.length <= 1);
@@ -76,7 +82,7 @@ const Header = () => {
     const isHome = location.pathname.length <= 1;
     setIsHome(isHome);
     setShowCategories(isHome);
-  }, [location])
+  }, [location]);
 
   return (
     <>
@@ -209,16 +215,11 @@ const Header = () => {
                     <LiaTwitterSquare />
                   </Link>
                 </li>
-                <li>
-                  <span>
-                    <Link to={""}>
-                      <AiOutlineUser />
-                    </Link>
-                    Đăng Nhập
-                  </span>
+                <li onClick={() => navigate(ROUTERS.ADMIN.LOGIN)}>
+                  <span>Đăng Nhập</span>
                 </li>
               </ul>
-              <div></div>
+              {/* <div></div> */}
             </div>
           </div>
         </div>

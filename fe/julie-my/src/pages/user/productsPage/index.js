@@ -1,12 +1,12 @@
 import { memo } from "react";
-import "../productsPages/style.scss";
+import "./style.scss";
 import Breadcrumb from "../theme/breadcrumb";
 import { Link } from "react-router-dom";
-import { categories } from "./../theme/header/index";
-import { ROUTERS } from "./../../../utils/router";
+import { categories } from "../theme/header/index";
+import { ROUTERS } from "../../../utils/router";
 
 import ProductCard from "../../../component/productCard";
-import { sorts, featuredProducts } from './../../../utils/common';
+import { sorts, featuredProducts } from '../../../utils/common';
 
 const ProductsPages = () => {
   return (
