@@ -28,7 +28,7 @@ body {
   text-align: center;
 
   h2 {
-    position: relative; 
+    position: relative;
   }
 
   h2:after {
@@ -84,6 +84,7 @@ body {
   background-color: map-get($theme-color, "main");
   border: none;
   height: 100%;
+  cursor: pointer;
 }
 
 input,

@@ -273,6 +273,7 @@ $bannerImg: "../../../../assets/users/image/banner/banner.jpg";
       background: map-get($theme-color, "main");
       border: none;
       height: 100%;
+      cursor: pointer;
     }
   }
 
