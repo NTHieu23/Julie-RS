@@ -1,0 +1,51 @@
+@use "sass:map";
+@import "../../../style/pages/all";
+
+.login {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+
+  .login_container {
+    background: #fff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .login_title {
+    font-weight: 600;
+    color: map.get($theme-color, "normal-text");
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  .login_form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    // width: 100%;
+
+    .login_form_group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .login_label {
+        font-size: 14px;
+        font-weight: 500;
+        color: map.get($theme-color, "normal-text");
+        text-transform: capitalize;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      border-radius: 4px;
+      width: 100%;
+    }
+  }
+}

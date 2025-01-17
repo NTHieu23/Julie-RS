@@ -13,7 +13,7 @@ import {
   AiOutlineCopy,
 } from "react-icons/ai";
 import { fomater } from "../../../utils/fomater";
-import { featuredProducts } from "./../../../utils/common";
+import { featuredProducts } from "../../../utils/common";
 import { Quantity } from "../../../component";
 
 const ProductDetailPages = () => {
