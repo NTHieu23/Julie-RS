@@ -1,6 +1,29 @@
-import { memo } from "react";
+import { memo, useState, useEffect } from "react";
 import "./style.scss";
 import { fomater } from "./../../../utils/fomater";
+
+const STATUS = {
+  ORDERED: {
+    key: "ORDERED",
+    label: "Đã đặt",
+    className: "order_dropdown_item",
+  },
+  PREPARING: {
+    key: "PREPARING",
+    label: "Lên đơn",
+    className: "order_dropdown_item",
+  },
+  DEVIVERED: {
+    key: "DEVIVERED",
+    label: "Đã giao hàng",
+    className: "order_dropdown_item",
+  },
+  CANCELLED: {
+    key: "CANCELLED",
+    label: "Hủy đơn",
+    className: "order_dropdown_item order_dropdown_item_danger",
+  },
+};
 
 const OderPageAd = () => {
   const orders = [
@@ -27,6 +50,19 @@ const OderPageAd = () => {
     },
   ];
 
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  useEffect(() => {
+    const handlerClickOutside = (event) => {
+      const isDropdown = event.target.closest(".order_dropdown");
+      if (!isDropdown) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handlerClickOutside);
+    return () => document.removeEventListener("mousedown", handlerClickOutside);
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -51,7 +87,31 @@ const OderPageAd = () => {
                     <td> {fomater(item.total)} </td>
                     <td> {item.customerName} </td>
                     <td> {new Date(item.date).toLocaleDateString()} </td>
-                    <td> {item.status} </td>
+                    <td>
+                      <div className="order_dropdown">
+                        <button
+                          className={`order_action_btn`}
+                          onClick={() => setActiveDropdown(item.id)}
+                        >
+                          Đã đặt
+                          <span className="arrow">▽</span>
+                        </button>
+                        {activeDropdown === item.id && (
+                          <div className="order_dropdown_menu">
+                            {Object.values(STATUS).map((status) => (
+                              <button
+                                key={status.key}
+                                className={status.className}
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                {" "}
+                                {status.label}{" "}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </td>
                   </tr>
                 ))}
               </tbody>
